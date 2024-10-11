@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mike's English Lessons offers personalized English lessons focusing on conversation, vocabulary building, and grammar."
+    />
+    <meta
+      name="keywords"
+      content="English lessons, personalized English lessons, English conversation, vocabulary building, grammar lessons"
+    />
+    <meta name="author" content="Mike" />
+    <title>Mike's English Lessons</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body,
+    html {
+      scroll-behavior: smooth;
+    }
+    .section {
+      padding: 60px 0;
+      margin-bottom: 32px;
+    }
+
+    .footer svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 0;
+    }
+  </style>
+  <body class="bg-gray-800 text-white">
+    <nav class="p-4 mb-32 bg-gray-900">
+      <div class="container mx-auto flex justify-between items-center">
+        <p class="text-green-400 text-xl font-bold">Mb</p>
+        <div class="md:hidden">
+          <button id="menuBtn" class="focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div id="menu" class="hidden md:flex space-x-4 text-lg">
+          <a href="#about" class="hover:text-green-400">About Me</a>
+          <a href="#services" class="hover:text-green-400">Services</a>
+          <a href="#contact" class="hover:text-green-400">Contact</a>
+        </div>
+      </div>
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden space-y-4 text-center text-lg"
+      >
+        <a href="#about" class="block hover:text-green-400">About Me</a>
+        <a href="#services" class="block hover:text-green-400">Services</a>
+        <a href="#contact" class="block hover:text-green-400">Contact</a>
+      </div>
+    </nav>
+
+    <h1 class="text-green-400 text-center text-4xl font-bold mb-32 underline">
+      Mike's English Lessons
+    </h1>
+
+    <div class="container mx-auto">
+      <div
+        id="about"
+        class="section flex flex-col gap-8 md:flex-row items-center h-auto m-4"
+      >
+        <div class="md:w-1/2 flex justify-center sm: mb-4 md:mb-0">
+          <img
+            src="./assets/me.jpg"
+            alt="Mike"
+            class="rounded-full w-48 h-48 object-cover"
+          />
+        </div>
+        <div class="md:w-1/2 px-4 sm: w-3/4">
+          <h2 class="text-green-400 text-3xl text-center font-bold">
+            About Me
+          </h2>
+          <p class="mt-4 text-left text-lg">
+            Hi! I'm Mike, a native English speaker from New York currently
+            living in Poland. I have a passion for teaching English and helping
+            students improve their language skills. In addition to my teaching
+            experience, I possess technical skills that could be beneficial for
+            companies looking for versatile candidates. I enjoy using my
+            language expertise alongside my tech skills to provide value in
+            various contexts.
+          </p>
+        </div>
+      </div>
+
+      <div
+        id="services"
+        class="section flex flex-col-reverse gap-8 md:flex-row items-center text-center h-auto m-4"
+      >
+        <div
+          class="text-green-400 text-center flex flex-row gap-10 md:flex-col justify-evenly-spaced w-1/2 mt-6"
+        >
+          <i class="fas fa-book fa-2x mb-6"></i>
+          <i class="fas fa-graduation-cap fa-2x mb-6"></i>
+          <i class="fas fa-language fa-2x mb-4"></i>
+        </div>
+        <div class="w-3/4 md:w-1/2">
+          <h2 class="text-green-400 text-3xl font-bold">Services</h2>
+          <p class="mt-4 text-left text-lg w-full mx-auto">
+            I offer personalized English lessons focusing on conversation,
+            vocabulary building, and conversational grammar. My teaching style
+            is conversational and friendly, aimed at creating a comfortable
+            environment where students can thrive. Whether you're looking to
+            improve your everyday conversation skills or strengthen your
+            understanding of English grammar, I'm here to help you achieve your
+            goals.
+          </p>
+        </div>
+      </div>
+
+      <div id="contact" class="section text-center mx-8">
+        <h2 class="text-green-400 text-3xl font-bold">Contact Me</h2>
+        <form
+          id="contactForm"
+          target="_blank"
+          action="https://formsubmit.co/6980a5c7bbc4d30d9e3298394acdaee0"
+          method="POST"
+          class="mt-8 max-w-lg mx-auto"
+        >
+          <div class="mb-4">
+            <label for="name" class="block mb-2">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="border border-gray-600 p-2 w-full text-black"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block mb-2">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="border border-gray-600 p-2 w-full text-black"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="message" class="block mb-2">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              class="border border-gray-600 p-2 w-full text-black"
+              required
+            ></textarea>
+            <input type="hidden" name="_captcha" value="false" />
+          </div>
+          <button
+            type="submit"
+            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Submit
+          </button>
+        </form>
+        <div id="responseMessage" class="mt-3"></div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 320">
+      <path
+        fill="rgba(255, 255, 255, 0.2)"
+        d="M0,128L30,149.3C60,171,120,213,180,218.7C240,224,300,192,360,154.7C420,117,480,75,540,53.3C600,32,660,32,720,53.3C780,75,840,117,900,128C960,139,1020,117,1080,96C1140,75,1200,53,1260,48C1320,43,1380,53,1410,58L1440,64L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320H0Z"
+      ></path>
+    </svg>
+    <footer class="bg-gray-900 text-center py-4">
+      <p>&copy; 2024 Myk.benot</p>
+      <div class="mt-2">
+        <a
+          href="https://www.linkedin.com/in/michael-reutzel-920758319"
+          target="_blank"
+          class="text-green-400 mx-2"
+        >
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a
+          href="https://github.com/Myk-benot"
+          target="_blank"
+          class="text-green-400 mx-2"
+        >
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
