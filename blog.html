@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Blog</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.17/marked.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body class="bg-gray-800 text-white">
+    <nav class="p-4 mb-32 bg-gray-900">
+      <div class="container mx-auto flex justify-between items-center">
+        <p class="text-green-400 text-xl font-bold">Mb</p>
+        <div id="menu" class="md:flex space-x-4 text-lg">
+          <a href="index.html" class="hover:text-green-400">Home</a>
+        </div>
+      </div>
+    </nav>
+    <div id="blog" class="section">
+      <h2 class="text-green-400 text-3xl text-center font-bold mb-32 underline">
+        Mike's Learning Polish Blog
+      </h2>
+      <div
+        id="blogPosts"
+        class="section flex flex-col space-y-4 justify-center items-center"
+      ></div>
+    </div>
+  </body>
+  <script src="blog.js" defer></script>
+</html>

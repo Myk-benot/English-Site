@@ -13,6 +13,7 @@
     />
     <meta name="author" content="Mike" />
     <title>Mike's English Lessons</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.17/marked.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -63,6 +64,7 @@
           </button>
         </div>
         <div id="menu" class="hidden md:flex space-x-4 text-lg">
+          <a href="blog.html" class="hover:text-green-400">Blog</a>
           <a href="#about" class="hover:text-green-400">About Me</a>
           <a href="#services" class="hover:text-green-400">Services</a>
           <a href="#contact" class="hover:text-green-400">Contact</a>
@@ -72,6 +74,7 @@
         id="mobileMenu"
         class="hidden md:hidden space-y-4 text-center text-lg"
       >
+        <a href="blog.html" class="block hover:text-green-400">Blog</a>
         <a href="#about" class="block hover:text-green-400">About Me</a>
         <a href="#services" class="block hover:text-green-400">Services</a>
         <a href="#contact" class="block hover:text-green-400">Contact</a>
@@ -210,6 +213,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

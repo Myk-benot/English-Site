@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.17/marked.min.js"></script>
+    <script>
+      async function loadPost() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const markdownUrl = urlParams.get("markdownUrl");
+
+        if (markdownUrl) {
+          try {
+            const response = await fetch(markdownUrl);
+            if (!response.ok) {
+              throw new Error(
+                `Error fetching markdown content: ${response.statusText}`
+              );
+            }
+            const markdownContent = await response.text();
+            document.getElementById("postContent").innerHTML =
+              marked.parse(markdownContent);
+
+            const title = markdownUrl
+              .split("/")
+              .pop()
+              .replace(".md", "")
+              .replace(/-/g, " ");
+            document.getElementById("postTitle").innerText = title;
+
+            document.getElementById("postDate").innerText =
+              new Date().toLocaleDateString();
+          } catch (error) {
+            console.error(error);
+            document.getElementById(
+              "postContent"
+            ).innerHTML = `<p>Error loading post content.</p>`;
+          }
+        } else {
+          document.getElementById(
+            "postContent"
+          ).innerHTML = `<p>No post specified.</p>`;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", loadPost);
+    </script>
+  </head>
+  <body class="bg-gray-800 text-white">
+    <nav class="p-4 bg-gray-900">
+      <div class="container mx-auto">
+        <a href="index.html" class="text-green-400 text-xl font-bold mr-4"
+          >Home</a
+        >
+        <a href="blog.html" class="text-green-400 text-xl font-bold">Blog</a>
+      </div>
+    </nav>
+    <div class="container mx-auto p-6">
+      <img
+        src="https://images.pexels.com/photos/12050306/pexels-photo-12050306.jpeg"
+        alt="Blog Header Image"
+        class="w-full h-64 object-cover rounded-lg mb-6"
+      />
+      <div class="text-center mb-6">
+        <h2
+          id="postTitle"
+          class="text-green-400 text-3xl font-bold mb-4 underline"
+        >
+          Mike's Learning Polish Blog
+        </h2>
+        <p class="text-sm text-gray-400">
+          Posted on <span id="postDate"></span>
+        </p>
+      </div>
+      <div
+        id="postContent"
+        class="bg-gray-900 rounded-lg p-6 text-white prose prose-invert max-w-full h-auto"
+      ></div>
+    </div>
+    <footer class="p-4 mt-6 text-center">
+      <p class="mt-4">© 2024 Myk.benot</p>
+    </footer>
+  </body>
+</html>
